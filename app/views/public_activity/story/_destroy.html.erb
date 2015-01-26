@@ -1,9 +1,0 @@
-<li class="list-group-item">
-  <span class="glyphicon glyphicon-remove"></span>
-  <strong><%= activity.owner ? activity.owner.name : 'Guest' %></strong>
-  has removed a story
-  <% if activity.title %>
-    "<%= activity.title %>"
-  <% end %>
-  (at <%= activity.created_at.strftime('%H:%M:%S %-d %B %Y') %>).
-</li>

@@ -15,6 +15,22 @@
   }
 }
 
+.glyphicon-update {
+  @extend .glyphicon-edit
+}
+
+.glyphicon-create {
+  @extend .glyphicon-plus
+}
+
+.glyphicon-destroy {
+  @extend .glyphicon-remove
+}
+
+.glyphicon-like {
+  @extend .glyphicon-thumbs-up
+}
+
 #footer {
   margin-top: 50px;
 }
