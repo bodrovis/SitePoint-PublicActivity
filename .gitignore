@@ -17,3 +17,5 @@
 /tmp
 
 .idea/
+
+config/local_env.yml
