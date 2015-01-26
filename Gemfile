@@ -18,6 +18,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
 
 gem 'sass-rails',   '~> 5.0.1'
