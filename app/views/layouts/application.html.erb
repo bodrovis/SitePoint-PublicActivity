@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Storyteller</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Storyteller', root_path, class: 'navbar-brand' %>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+      <% if current_user %>
+        <li><span><%= current_user.name %></span></li>
+        <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Log In', '/auth/facebook' %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-header">
+    <h1><%= yield :page_header %></h1>
+  </div>
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %>
+    </div>
+  <% end %>
+
+  <div class="col-sm-9">
+    <%= yield %>
+  </div>
+
+  <%= render 'shared/activities' %>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Created by <a href="http://radiant-wind.com" target="_blank">Radiant Wind</a></p>
+  </div>
+</div>
+
+</body>
+</html>

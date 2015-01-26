@@ -1,0 +1,15 @@
+<%= form_for @story do |f| %>
+  <%= render 'shared/errors', object: @story %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control', required: true, cols: 3 %>
+  </div>
+
+  <%= f.submit 'Post', class: 'btn btn-primary' %>
+<% end %>
