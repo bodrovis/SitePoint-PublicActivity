@@ -16,7 +16,7 @@
     </div>
     <ul class="nav navbar-nav pull-right">
       <% if current_user %>
-        <li><span><%= current_user.name %></span></li>
+        <li><span><%= image_tag current_user.avatar_url, alt: current_user.name %></span></li>
         <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
       <% else %>
         <li><%= link_to 'Log In', '/auth/facebook' %></li>
